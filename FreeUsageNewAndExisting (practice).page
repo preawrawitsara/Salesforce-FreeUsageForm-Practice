@@ -1,0 +1,104 @@
+<apex:page controller="" standardStylesheets="false">   
+
+    <style>
+        .allWrapper {
+            font-family: arial, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 40px;
+            width: 820px;
+            margin: 0 auto;
+            border-spacing: 1;
+            border-collapse: collapse;
+            background: white;
+            overflow: hidden;
+            position: relative;
+            border: solid 0.01px black;
+            border-radius: 5px;
+        }
+
+        .headerPageBlock {
+            font-family: arial, sans-serif;
+            height: 40px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff !important;
+            text-align: center;
+            text-transform: uppercase;
+            background: #4a4e69;
+            display: block;
+            padding: 0px;
+            margin: 0;
+        }
+
+        .bPageBlock .pbTitle {
+            width: 100%;
+            text-align: center;
+        }
+
+        .inputField {
+            padding: 1px;
+            border-radius: 5px;
+            border-color: grey;
+            width: 150px;
+            border-style: none;
+            border-bottom-style: solid;
+        }
+
+        .inputLabel {
+            display: inline;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .btn {
+            padding: 8px;
+            border-radius: 5px;
+            border-color: grey;
+            margin-right: 10px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            border-style: none;
+            border-bottom-style: solid;
+            background: #685369;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: arial, sans-serif;
+            text-decoration: none;
+            transition: 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            color: #fff;
+            text-decoration: none;
+            background: #9a8c98;
+        }
+    </style>
+    
+    <apex:form styleClass="allWrapper">
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <h2 class="headerPageBlock">Free Usage Record</h2>
+            <apex:panelGrid columns="4" id="theGrid" html-align="center" cellpadding="4">
+                <apex:outputLabel styleClass="inputLabel">Study Name</apex:outputLabel>
+                <apex:inputField value="{}" styleClass="inputField"/>
+            </apex:panelGrid>
+            
+            <apex:pageBlockSection columns="2" collapsible="false" html-align="right"> 
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton styleClass="btn" value="Cancel" oncomplete="doRedirect();"/>                
+                    <script type="text/javascript">
+                        function doRedirect(){
+                            window.history.back();
+                        }
+                    </script>                    
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton styleClass="btn" value="Save" action="{}" />          
+                </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
